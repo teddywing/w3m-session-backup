@@ -36,7 +36,7 @@
        (lambda (page)
          (format "%s\n%s"
                  (first page)
-                 (last page 1)))
+                 (first (last page))))
        (my-w3m-session-backup))
       "\n\n"))))
 
