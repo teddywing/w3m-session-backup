@@ -39,8 +39,5 @@
                  (last page 1)))
        (my-w3m-session-backup))
       "\n\n"))))
-    ; (format
-    ;  "%s\n%s\n\n"
-    ;  )))
 
 (save-backup)
