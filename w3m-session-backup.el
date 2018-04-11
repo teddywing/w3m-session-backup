@@ -59,6 +59,6 @@
 (defun filename ()
   "Generates a default filename using the current date & time."
   (format "w3m-tabs-%s.yml"
-          (format-time-string "%Y%m%d-%Hh%M")))
+          (format-time-string "%Y%m%d-%Hh%Mm%S")))
 
 (save-backup)
