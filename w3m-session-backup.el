@@ -29,15 +29,16 @@
 
 (defun save-backup ()
   "TODO"
-  (with-temp-file "~/tmp-w3m-session.txt"
+  (with-temp-file "~/tmp-w3m-session.yml"
     (insert
      (string-join
       (mapcar
        (lambda (page)
-         (format "%s\n%s"
-                 (first page)
-                 (first (last page))))
+         (format "- page_title: %s
+  url: %s"
+                 (first (last page))
+                 (first page)))
        (my-w3m-session-backup))
-      "\n\n"))))
+      "\n"))))
 
 (save-backup)
