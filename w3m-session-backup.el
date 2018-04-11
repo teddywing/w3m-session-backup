@@ -78,3 +78,10 @@
 (w3m-session-backup--save-backup)
 
 ;; Make filename customisable
+
+;; Make M-x command to write session backup
+
+(defun w3m-session-backup ()
+  "TODO"
+  (interactive)
+  (w3m-session-backup--save-backup))
