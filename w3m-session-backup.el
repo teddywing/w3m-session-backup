@@ -108,6 +108,7 @@
 
 ;; Make M-x command to write session backup
 
+;;;###autoload
 (defun w3m-session-backup ()
   "Save the current w3m crash recovery session to a new YAML file."
   (interactive)
