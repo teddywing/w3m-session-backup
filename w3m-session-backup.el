@@ -67,11 +67,6 @@
       (last buffer)))
    (w3m-session-backup--buffers)))
 
-;; (first (nth 2
-;;     (first
-;;      (w3m-load-list w3m-session-file))))
-
-(w3m-session-backup--page-list)
 
 ;; Write to file
   ;; https://stackoverflow.com/questions/2321904/elisp-how-to-save-data-in-a-file#2322164
@@ -108,8 +103,6 @@
   "Generates a default filename using the current date & time."
   (format "w3m-tabs-%s.yml"
           (format-time-string "%Y%m%d-%Hh%Mm%S")))
-
-(w3m-session-backup--save-backup)
 
 ;; Make filename customisable
 
