@@ -5,7 +5,7 @@
 ;; Author: Teddy Wing
 ;; Version: 0.0.1
 ;; Package-Requires: ((w3m "1.4.609"))
-;; Keywords: 
+;; Keywords: tools
 ;; URL: 
 
 ;; This program is free software; you can redistribute it and/or modify
