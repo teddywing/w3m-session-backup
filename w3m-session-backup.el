@@ -1,5 +1,8 @@
 ;; Configurable save directory, default to current path
-(setq save-directory ".")
+(defcustom save-directory "."
+  "Directory where backup files are saved."
+  :type 'directory
+  :group 'TODO)
 
 (defun buffers ()
   "TODO"
