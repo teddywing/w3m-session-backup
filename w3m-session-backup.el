@@ -38,7 +38,7 @@
 
 (defun save-backup ()
   "TODO"
-  (with-temp-file "~/tmp-w3m-session.yml"
+  (with-temp-file (concat "~/" (filename))
     (insert
      (string-join
       (mapcar
@@ -49,5 +49,10 @@
                  (first page)))
        (my-w3m-session-backup))
       "\n"))))
+
+(defun filename ()
+  "Generates a default filename using the current date & time."
+  (format "w3m-tabs-%s.yml"
+          (format-time-string "%Y%m%d-%Hh%M")))
 
 (save-backup)
