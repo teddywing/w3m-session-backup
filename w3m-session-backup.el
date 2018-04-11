@@ -114,4 +114,6 @@
   (interactive)
   (w3m-session-backup--save-backup))
 
+(provide 'w3m-session-backup)
+
 ;;; w3m-session-backup.el ends here
