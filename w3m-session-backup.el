@@ -67,12 +67,6 @@
       (last buffer)))
    (w3m-session-backup--buffers)))
 
-
-;; Write to file
-  ;; https://stackoverflow.com/questions/2321904/elisp-how-to-save-data-in-a-file#2322164
-;; Format some YAML text to write to the file
-;; Configurable dynamic filename based on date-time
-
 (defun w3m-session-backup--yml-escape (str)
   "YAML escape single quotes by doubling them."
   (replace-regexp-in-string
@@ -104,9 +98,6 @@
   (format "w3m-tabs-%s.yml"
           (format-time-string "%Y%m%d-%Hh%Mm%S")))
 
-;; Make filename customisable
-
-;; Make M-x command to write session backup
 
 ;;;###autoload
 (defun w3m-session-backup ()
