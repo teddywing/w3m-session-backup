@@ -42,7 +42,7 @@
   :group 'w3m-session-backup
   :package-version '(w3m-session-backup . "0.0.1"))
 
-(defcustom w3m-session-backup-filename-function 'filename
+(defcustom w3m-session-backup-filename-function 'w3m-session-backup--filename
   "Function that generates a filename for the session backup."
   :type 'function
   :group 'w3m-session-backup
