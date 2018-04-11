@@ -1,8 +1,13 @@
+(defgroup w3m-session-backup nil
+  "TODO")
+
 ;; Configurable save directory, default to current path
 (defcustom save-directory "."
   "Directory where backup files are saved."
   :type 'directory
-  :group 'TODO)
+  :group 'w3m-session-backup
+  :package-version '(w3m-session-backup . "0.0.1"))
+
 
 (defun buffers ()
   "TODO"
