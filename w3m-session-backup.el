@@ -2,26 +2,26 @@
   "TODO")
 
 ;; Configurable save directory, default to current path
-(defcustom save-directory "."
+(defcustom w3m-session-backup-save-directory "."
   "Directory where backup files are saved."
   :type 'directory
   :group 'w3m-session-backup
   :package-version '(w3m-session-backup . "0.0.1"))
 
-(defcustom filename-function 'filename
+(defcustom w3m-session-backup-filename-function 'filename
   "Function that generates a filename for the session backup."
   :type 'function
   :group 'w3m-session-backup
   :package-version '(w3m-session-backup . "0.0.1"))
 
 
-(defun buffers ()
+(defun w3m-session-backup--buffers ()
   "TODO"
   (nth 2
        (first
         (w3m-load-list w3m-session-file))))
 
-(defun my-w3m-session-backup ()
+(defun w3m-session-backup--page-list ()
   "TODO"
   (mapcar
    (lambda (buffer)
@@ -31,20 +31,20 @@
 
       ;; Page title
       (last buffer)))
-   (buffers)))
+   (w3m-session-backup--buffers)))
 
 ;; (first (nth 2
 ;;     (first
 ;;      (w3m-load-list w3m-session-file))))
 
-(my-w3m-session-backup)
+(w3m-session-backup--page-list)
 
 ;; Write to file
   ;; https://stackoverflow.com/questions/2321904/elisp-how-to-save-data-in-a-file#2322164
 ;; Format some YAML text to write to the file
 ;; Configurable dynamic filename based on date-time
 
-(defun yml-escape (str)
+(defun w3m-session-backup--yml-escape (str)
   "YAML escape single quotes by doubling them."
   (replace-regexp-in-string
    (regexp-quote "'")
@@ -53,28 +53,28 @@
    'fixedcase
    'literal))
 
-(defun save-backup ()
+(defun w3m-session-backup--save-backup ()
   "TODO"
   (with-temp-file
       (concat
-       (file-name-as-directory save-directory)
-       (funcall filename-function))
+       (file-name-as-directory w3m-session-backup-save-directory)
+       (funcall w3m-session-backup-filename-function))
     (insert
      (string-join
       (mapcar
        (lambda (page)
          (format "- page_title: '%s'
   url: '%s'"
-                 (yml-escape (first (last page)))
+                 (w3m-session-backup--yml-escape (first (last page)))
                  (first page)))
-       (my-w3m-session-backup))
+       (w3m-session-backup--page-list))
       "\n"))))
 
-(defun filename ()
+(defun w3m-session-backup--filename ()
   "Generates a default filename using the current date & time."
   (format "w3m-tabs-%s.yml"
           (format-time-string "%Y%m%d-%Hh%Mm%S")))
 
-(save-backup)
+(w3m-session-backup--save-backup)
 
 ;; Make filename customisable
