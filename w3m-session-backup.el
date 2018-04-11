@@ -62,3 +62,5 @@
           (format-time-string "%Y%m%d-%Hh%Mm%S")))
 
 (save-backup)
+
+;; Make filename customisable
