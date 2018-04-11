@@ -27,6 +27,15 @@
 ;; Format some YAML text to write to the file
 ;; Configurable dynamic filename based on date-time
 
+(defun yml-escape (str)
+  "YAML escape single quotes by doubling them."
+  (replace-regexp-in-string
+   (regexp-quote "'")
+   "''"
+   str
+   'fixedcase
+   'literal))
+
 (defun save-backup ()
   "TODO"
   (with-temp-file "~/tmp-w3m-session.yml"
@@ -34,9 +43,9 @@
      (string-join
       (mapcar
        (lambda (page)
-         (format "- page_title: %s
-  url: %s"
-                 (first (last page))
+         (format "- page_title: '%s'
+  url: '%s'"
+                 (yml-escape (first (last page)))
                  (first page)))
        (my-w3m-session-backup))
       "\n"))))
