@@ -33,7 +33,7 @@
 ;;; Code:
 
 (defgroup w3m-session-backup nil
-  "TODO")
+  "w3m-session-backup customisations.")
 
 ;; Configurable save directory, default to current path
 (defcustom w3m-session-backup-save-directory "."
@@ -50,13 +50,13 @@
 
 
 (defun w3m-session-backup--buffers ()
-  "TODO"
+  "Crash recovery session list from `~/.w3m/.sessions`."
   (nth 2
        (first
         (w3m-load-list w3m-session-file))))
 
 (defun w3m-session-backup--page-list ()
-  "TODO"
+  "List of URL and page title tuples."
   (mapcar
    (lambda (buffer)
      (cons
@@ -88,7 +88,7 @@
    'literal))
 
 (defun w3m-session-backup--save-backup ()
-  "TODO"
+  "Save the current w3m crash recovery session to a new YAML file."
   (with-temp-file
       (concat
        (file-name-as-directory w3m-session-backup-save-directory)
@@ -116,7 +116,7 @@
 ;; Make M-x command to write session backup
 
 (defun w3m-session-backup ()
-  "TODO"
+  "Save the current w3m crash recovery session to a new YAML file."
   (interactive)
   (w3m-session-backup--save-backup))
 
