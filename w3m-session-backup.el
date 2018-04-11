@@ -1,3 +1,37 @@
+;;; w3m-session-backup.el --- Backup the current W3m session to a file
+
+;; Copyright (c) 2018  Teddy Wing
+
+;; Author: Teddy Wing
+;; Version: 0.0.1
+;; Package-Requires: ((w3m "TODO"))
+;; Keywords: 
+;; URL: 
+
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+;;; Commentary:
+
+;; Saves a YAML file backup of the current W3m "Crash recovery session".
+;;
+;; Tabs are saved in the following format:
+;;
+;;     - page_title: 'Title'
+;;       url: 'http://example.com'
+
+;;; Code:
+
 (defgroup w3m-session-backup nil
   "TODO")
 
@@ -85,3 +119,5 @@
   "TODO"
   (interactive)
   (w3m-session-backup--save-backup))
+
+;;; w3m-session-backup.el ends here
