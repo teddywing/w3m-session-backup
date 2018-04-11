@@ -37,7 +37,7 @@
 
 ;; Configurable save directory, default to current path
 (defcustom w3m-session-backup-save-directory "."
-  "Directory where backup files are saved."
+  "Directory where backup files are saved. Defaults to the current path."
   :type 'directory
   :group 'w3m-session-backup
   :package-version '(w3m-session-backup . "0.0.1"))
