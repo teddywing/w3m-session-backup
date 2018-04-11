@@ -8,6 +8,12 @@
   :group 'w3m-session-backup
   :package-version '(w3m-session-backup . "0.0.1"))
 
+(defcustom filename 'filename
+  "Function that generates a filename for the session backup."
+  :type 'function
+  :group 'w3m-session-backup
+  :package-version '(w3m-session-backup . "0.0.1"))
+
 
 (defun buffers ()
   "TODO"
@@ -52,7 +58,7 @@
   (with-temp-file
       (concat
        (file-name-as-directory save-directory)
-       (filename))
+       (funcall filename))
     (insert
      (string-join
       (mapcar
