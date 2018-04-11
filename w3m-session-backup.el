@@ -4,7 +4,7 @@
 
 ;; Author: Teddy Wing
 ;; Version: 0.0.1
-;; Package-Requires: ((w3m "TODO"))
+;; Package-Requires: ((w3m "1.4.609"))
 ;; Keywords: 
 ;; URL: 
 
