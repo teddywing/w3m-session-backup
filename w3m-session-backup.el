@@ -1,3 +1,6 @@
+;; Configurable save directory, default to current path
+(setq save-directory ".")
+
 (defun buffers ()
   "TODO"
   (nth 2
@@ -38,7 +41,10 @@
 
 (defun save-backup ()
   "TODO"
-  (with-temp-file (concat "~/" (filename))
+  (with-temp-file
+      (concat
+       (file-name-as-directory save-directory)
+       (filename))
     (insert
      (string-join
       (mapcar
