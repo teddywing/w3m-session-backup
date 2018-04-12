@@ -6,7 +6,7 @@
 ;; Version: 0.0.1
 ;; Package-Requires: ((w3m "1.4.609"))
 ;; Keywords: tools
-;; URL: 
+;; URL: https://github.com/teddywing/w3m-session-backup
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
