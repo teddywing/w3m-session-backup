@@ -23,8 +23,8 @@ The resulting file will look like:
 
 	- page_title: 'Example'
 	  url: 'http://example.com'
-	- page_title: 'TODO'
-	  url: 'TODO'
+	- page_title: 'teddywing/w3m-session-backup'
+	  url: 'https://github.com/teddywing/w3m-session-backup'
 
 
 ## Customise
