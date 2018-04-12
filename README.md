@@ -49,8 +49,11 @@ function can be used instead. For example:
 
 
 ## Install
-Download the [w3m-session-backup.el][3] file. `M-x package-install-file`
-TODO
+Download the [w3m-session-backup.el][3] file. Run
+
+	M-x package-install-file
+
+with the downloaded file.
 
 
 ## License
