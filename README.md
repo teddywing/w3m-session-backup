@@ -63,4 +63,4 @@ COPYING file).
 
 [1]: https://github.com/ecbrown/emacs-w3m/
 [2]: https://github.com/teddywing/chrome-copy-urls-from-all-tabs
-[3]: 
+[3]: https://raw.githubusercontent.com/teddywing/w3m-session-backup/master/w3m-session-backup.el
