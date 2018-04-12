@@ -79,9 +79,7 @@
 (defun w3m-session-backup--save-backup ()
   "Save the current w3m crash recovery session to a new YAML file."
   (with-temp-file
-      (concat
-       (file-name-as-directory w3m-session-backup-save-directory)
-       (funcall w3m-session-backup-filename-function))
+      (w3m-session-backup--save-to)
     (insert
      (string-join
       (mapcar
@@ -98,12 +96,22 @@
   (format "w3m-tabs-%s.yml"
           (format-time-string "%Y%m%d-%Hh%Mm%S")))
 
+(defun w3m-session-backup--save-to ()
+  "Path to the file that the session YAML will be saved to."
+  (concat
+   (file-name-as-directory w3m-session-backup-save-directory)
+   (funcall w3m-session-backup-filename-function)))
+
 
 ;;;###autoload
 (defun w3m-session-backup ()
   "Save the current w3m crash recovery session to a new YAML file."
   (interactive)
-  (w3m-session-backup--save-backup))
+  (w3m-session-backup--save-backup)
+  (minibuffer-message
+   (concat
+    "Session saved to "
+    (w3m-session-backup--save-to))))
 
 (provide 'w3m-session-backup)
 
