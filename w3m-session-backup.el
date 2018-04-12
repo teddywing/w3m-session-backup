@@ -103,7 +103,8 @@
 (defun w3m-session-backup ()
   "Save the current w3m crash recovery session to a new YAML file."
   (interactive)
-  (w3m-session-backup--save-backup))
+  (w3m-session-backup--save-backup)
+  (minibuffer-message "Session saved"))
 
 (provide 'w3m-session-backup)
 
