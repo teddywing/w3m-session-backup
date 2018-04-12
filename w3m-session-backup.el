@@ -3,7 +3,7 @@
 ;; Copyright (c) 2018  Teddy Wing
 
 ;; Author: Teddy Wing
-;; Version: 0.0.1
+;; Version: 0.0.2
 ;; Package-Requires: ((w3m "1.4.609"))
 ;; Keywords: tools
 ;; URL: https://github.com/teddywing/w3m-session-backup
