@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+v0.0.3 (2019-06-02):
+	* Fix error complaining that `string-join` symbol's function definition is
+	  void.
+
 v0.0.2 (2018-04-12):
 	* Print a message to the minibuffer when the backup action is performed.
 

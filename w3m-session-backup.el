@@ -1,9 +1,9 @@
 ;;; w3m-session-backup.el --- Backup the current W3m session to a file
 
-;; Copyright (c) 2018  Teddy Wing
+;; Copyright (c) 2018–2019  Teddy Wing
 
 ;; Author: Teddy Wing
-;; Version: 0.0.2
+;; Version: 0.0.3
 ;; Package-Requires: ((w3m "1.4.609"))
 ;; Keywords: tools
 ;; URL: https://github.com/teddywing/w3m-session-backup
