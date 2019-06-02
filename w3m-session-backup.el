@@ -32,6 +32,8 @@
 
 ;;; Code:
 
+(require 'subr-x)
+
 (defgroup w3m-session-backup nil
   "w3m-session-backup customisations.")
 
